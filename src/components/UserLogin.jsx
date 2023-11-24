@@ -8,7 +8,7 @@ export const UserLogin = ({ handleLogin }) => {
   return (
     <Card className="rounded-md">
       <CardContent className="flex flex-col justify-center">
-        <Typography variant="h6" textAlign="  " className="pb-2">
+        <Typography variant="h6" textAlign="center" className="pb-2">
           Login
         </Typography>
         <TextField
