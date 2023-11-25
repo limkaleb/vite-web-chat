@@ -20,11 +20,11 @@ export const Chat = ({ user }) => {
   const [msg, setMsg] = useState('')
 
   const handleSend = () => {
-    if (msg.trim()) {
+    if (msg) {
       const date = new Date()
       const newMessage = {
         id: uid(),
-        message: msg.trim(),
+        message: msg,
         userId: user.id,
         userName: user.name,
         time: `${date.getHours()}:${date.getMinutes()}`,
@@ -53,6 +53,12 @@ export const Chat = ({ user }) => {
           placeholder="Write a message..."
           value={msg}
           onChange={(e) => setMsg(e.target.value)}
+          onKeyDown={(ev) => {
+            if (ev.ctrlKey && ev.key === 'Enter') {
+              handleSend()
+              ev.preventDefault()
+            }
+          }}
         />
         <Button onClick={handleSend}>
           <SendIcon />

@@ -39,7 +39,7 @@ const Message = ({ messageItem, userId }) => {
         <div>
           <div className=" w-fit mb-2 p-1 bg-white rounded-lg">
             <div className=" text-xs font-bold p-1">{messageItem.userName}</div>
-            <div className="text-sm">{messageItem.message}</div>
+            <pre>{messageItem.message}</pre>
             <div className="text-xs text-right text-gray-400">
               {messageItem.time}
             </div>
